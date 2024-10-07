@@ -1,0 +1,14 @@
+<h1>{{ post.title }}</h1>
+<p>{{ post.content }}</p>
+
+<h2>Comments:</h2>
+{% for comment in comments %}
+    <p>{{ comment.content }}</p>
+    <p><strong>By:</strong> {{ comment.author }}</p>
+{% endfor %}
+
+<form method="post">
+    {% csrf_token %}
+    <textarea name="content"></textarea>
+    <button type="submit">Add Comment</button>
+</form>

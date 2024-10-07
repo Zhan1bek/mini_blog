@@ -1,0 +1,6 @@
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Title" value="{{ post.title|default_if_none:'' }}">
+    <textarea name="content">{{ post.content|default_if_none:'' }}</textarea>
+    <button type="submit">Save</button>
+</form>

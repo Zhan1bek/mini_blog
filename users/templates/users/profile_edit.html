@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration</title>
+    <title>Edit Profile</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,15 +27,19 @@
             border-radius: 5px;
             margin-top: 20px;
         }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>User Registration</h1>
-        <form method="post">
+        <h1>Edit Profile</h1>
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit">Register</button>
+            <button type="submit">Save Changes</button>
         </form>
     </div>
 </body>
